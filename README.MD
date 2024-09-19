@@ -132,8 +132,7 @@ of family.
 
 ```bash
 Input the number of families : 5
-Input the number of members in the
-family ( separated by a space) : 1 2 4 3 3
+Input the number of members in the family ( separated by a space) : 1 2 4 3 3
 ```
 
 ### Example Output 1
@@ -146,8 +145,7 @@ Minimum bus required is : 4
 
 ```bash
 Input the number of families : 8
-Input the number of members in the
-family ( separated by a space) : 2 3 4 4 2 1 3 1
+Input the number of members in the family ( separated by a space) : 2 3 4 4 2 1 3 1
 ```
 
 ### Example Output 2
@@ -160,8 +158,7 @@ Minimum bus required is : 5
 
 ```bash
 Input the number of families : 5
-Input the number of members in the
-family ( separated by a space) : 1 5
+Input the number of members in the family ( separated by a space) : 1 5
 ```
 
 ### Example Output 3
