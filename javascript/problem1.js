@@ -10,9 +10,11 @@ const sortCharacters = (s) => {
       consonantChars += char;
     }
   }
+ 
+  vowelChars = vowelChars.split("").sort().join("");
+  consonantChars = consonantChars.split("").sort().reverse().join("");
   return { vowelChars, consonantChars };
 };
-
 
 const input = "Sample Case";
 const { vowelChars, consonantChars } = sortCharacters(input);

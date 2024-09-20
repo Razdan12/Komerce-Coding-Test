@@ -24,7 +24,7 @@ func sortCharacters(s string) (string, string) {
 	vowelsSlice := strings.Split(vowelsCars, "")
 	consonantsSlice := strings.Split(consonanChart, "")
 	sort.Strings(vowelsSlice)
-	sort.Strings(consonantsSlice)
+	sort.Sort(sort.Reverse(sort.StringSlice(consonantsSlice)))
 
 	return strings.Join(vowelsSlice, ""), strings.Join(consonantsSlice, "")
 }
