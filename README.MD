@@ -53,7 +53,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 	"strings"
 )
 
@@ -63,6 +62,9 @@ func sortCharacters(s string) (string, string) {
 
 	s = strings.ToLower(s)
 	for _, char := range s {
+		if char == ' ' {
+			continue
+		}
 		if strings.ContainsRune(vowels, char) {
 			vowelsCars += string(char)
 		} else if char >= 'a' && char <= 'z' {
@@ -70,12 +72,7 @@ func sortCharacters(s string) (string, string) {
 		}
 	}
 
-	vowelsSlice := strings.Split(vowelsCars, "")
-	consonantsSlice := strings.Split(consonanChart, "")
-	sort.Strings(vowelsSlice)
-	sort.Sort(sort.Reverse(sort.StringSlice(consonantsSlice)))
-
-	return strings.Join(vowelsSlice, ""), strings.Join(consonantsSlice, "")
+	return vowelsCars, consonanChart
 }
 
 func main() {
@@ -89,6 +86,7 @@ func main() {
 	fmt.Println("Consonant Characters:", consonants)
 }
 
+
 ```
 
 ### With Javascript
@@ -100,15 +98,15 @@ const sortCharacters = (s) => {
   let consonantChars = "";
   s = s.toLowerCase();
   for (let char of s) {
+    if (char === " ") {
+      continue;
+    }
     if (vowels.includes(char)) {
       vowelChars += char;
     } else if (char >= "a" && char <= "z") {
       consonantChars += char;
     }
   }
- 
-  vowelChars = vowelChars.split("").sort().join("");
-  consonantChars = consonantChars.split("").sort().reverse().join("");
   return { vowelChars, consonantChars };
 };
 

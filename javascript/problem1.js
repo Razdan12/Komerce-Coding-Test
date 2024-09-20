@@ -4,15 +4,15 @@ const sortCharacters = (s) => {
   let consonantChars = "";
   s = s.toLowerCase();
   for (let char of s) {
+    if (char === " ") {
+      continue;
+    }
     if (vowels.includes(char)) {
       vowelChars += char;
     } else if (char >= "a" && char <= "z") {
       consonantChars += char;
     }
   }
- 
-  vowelChars = vowelChars.split("").sort().join("");
-  consonantChars = consonantChars.split("").sort().reverse().join("");
   return { vowelChars, consonantChars };
 };
 

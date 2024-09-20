@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 	"strings"
 )
 
@@ -14,6 +13,9 @@ func sortCharacters(s string) (string, string) {
 
 	s = strings.ToLower(s)
 	for _, char := range s {
+		if char == ' ' {
+			continue
+		}
 		if strings.ContainsRune(vowels, char) {
 			vowelsCars += string(char)
 		} else if char >= 'a' && char <= 'z' {
@@ -21,12 +23,7 @@ func sortCharacters(s string) (string, string) {
 		}
 	}
 
-	vowelsSlice := strings.Split(vowelsCars, "")
-	consonantsSlice := strings.Split(consonanChart, "")
-	sort.Strings(vowelsSlice)
-	sort.Sort(sort.Reverse(sort.StringSlice(consonantsSlice)))
-
-	return strings.Join(vowelsSlice, ""), strings.Join(consonantsSlice, "")
+	return vowelsCars, consonanChart
 }
 
 func main() {
