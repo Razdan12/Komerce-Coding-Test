@@ -73,7 +73,7 @@ func sortCharacters(s string) (string, string) {
 	vowelsSlice := strings.Split(vowelsCars, "")
 	consonantsSlice := strings.Split(consonanChart, "")
 	sort.Strings(vowelsSlice)
-	sort.Strings(consonantsSlice)
+	sort.Sort(sort.Reverse(sort.StringSlice(consonantsSlice)))
 
 	return strings.Join(vowelsSlice, ""), strings.Join(consonantsSlice, "")
 }
@@ -106,6 +106,9 @@ const sortCharacters = (s) => {
       consonantChars += char;
     }
   }
+ 
+  vowelChars = vowelChars.split("").sort().join("");
+  consonantChars = consonantChars.split("").sort().reverse().join("");
   return { vowelChars, consonantChars };
 };
 
@@ -113,6 +116,7 @@ const input = "Sample Case";
 const { vowelChars, consonantChars } = sortCharacters(input);
 console.log("Vowel Characters:", vowelChars);
 console.log("Consonant Characters:", consonantChars);
+
 ```
 
 ## Problem 2 : PSBB ( Pembatasan Sosial Berskala Besar )
